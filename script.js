@@ -36,14 +36,6 @@ const doubleGrid = gridSize * gridSize
 }
 
 
- 
-       
-    
-
-
-
-
-
 
 changeGrid.addEventListener('click', function(e){
 const modal = document.createElement('div')
@@ -58,7 +50,7 @@ width: 40%;
 display: flex;
 padding: 20px;
 border: solid .1px black;
-box-shadow: 0 .7px .7px black;
+box-shadow: -1px 2px 5px -1px rgba(0,0,0,0.75);
 align-content: center;
 justify-content: center;
 min-height: max-content;
@@ -81,8 +73,8 @@ width: max-content;
 `)
 confirmGrid.textContent = 'Confirm'
 modalInput.setAttribute('style', `
-border: none
-padding: 10px;
+border: none;
+padding: 15px;
 color: '#2e2c2c;'
 
 `)
