@@ -4,9 +4,17 @@ const changeGrid = document.querySelector('.changeGrid')
 const main = document.querySelector('.main')
 const blackColor = document.querySelector('.black')
 const random = document.querySelector('.random')
-let currentColor = '#000'
+
 
 const reset = document.querySelector('.reset')
+const eraser = document.querySelector('.eraser')
+
+
+let currentColor = '#000'
+const brightness = 'dark'
+
+let eraserValue = false
+
 
 
  function createGrid(gridSize){
@@ -39,6 +47,7 @@ const doubleGrid = gridSize * gridSize
 
 changeGrid.addEventListener('click', function(e){
 const modal = document.createElement('div')
+ eraserValue = false
 modal.setAttribute('style', `
 position: absolute;
 top: 50%;
@@ -103,11 +112,6 @@ changeGridColor(currentColor)
 })
 })
 
-const changeGridFunction = () => {
-const mainChild = main.childNodes
-const modalNode = mainChild[1]
-
-}
 
 const resetGrid = () => {
      while(innerCanvas.hasChildNodes()){
@@ -120,7 +124,8 @@ const changeGridColor = (color = '#000') => {
 
     const child = innerCanvas.childNodes
 
-    Array.from(child).map(c => {
+ if(eraserValue === false){
+ Array.from(child).map(c => {
         c.addEventListener('mouseover', function(e)  {
             if(color === 'random'){
                 const randomColor = Math.floor(Math.random()*16777215).toString(16);
@@ -133,15 +138,48 @@ const changeGridColor = (color = '#000') => {
    
         })
 })
+ }
+
+   
+}
+
+
+
+    eraser.addEventListener('click', () => {
+        eraserValue = true
+      
+        erase()
+    })
+
+
+const erase = () => {
+
+     const child = innerCanvas.childNodes
+
+    Array.from(child).map(c => {
+        c.addEventListener('mouseover', function(e)  {
+           if(eraserValue){
+               
+              c.removeAttribute('style', `background-color: #000; border: solid .1px #fff`)
+           }
+
+         
+   
+        })
+})
+    
 }
 
 blackColor.addEventListener('click', function(e){
     currentColor = '#000'
+     eraserValue = false
     changeGridColor(currentColor)
+    
 })
 
 random.addEventListener('click', function(e){
     currentColor = 'random'
+     eraserValue = false
     changeGridColor(currentColor)
     
 })
@@ -151,8 +189,3 @@ reset.addEventListener('click', () =>{
 })
 
 
-
-
-
-
-changeGridFunction()
