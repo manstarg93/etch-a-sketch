@@ -1,0 +1,42 @@
+.main{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.canvas{
+    width: 80%;
+    margin: 0 auto;
+    background-color: red;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.gameHeader{
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+}
+
+.innerCanvas{
+    width: 600px;
+    height: 600px;
+ 
+    background-color: #fff;
+    display: grid;
+    
+    
+   justify-content: center;
+
+   align-content: flex-start;
+  
+    
+}
+.innerCanvas>div {
+border: .1px solid black;
+background-color: #fff;
+
+}
