@@ -2,18 +2,19 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    position: relative;
 }
 
 .canvas{
     width: 80%;
     margin: 0 auto;
     background-color: red;
-   
+ 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    padding-bottom: 50px;
 }
 .gameHeader{
     text-align: center;
@@ -22,8 +23,8 @@
 }
 
 .innerCanvas{
-    width: 600px;
-    height: 600px;
+    width: 80%;
+    height: 500px;
  
     background-color: #fff;
     display: grid;
@@ -39,4 +40,56 @@
 border: .1px solid black;
 background-color: #fff;
 
+}
+
+.button{
+    border: none;
+    padding: 8px;
+    background-color: orange;
+    color: white;
+    border-radius: 5px;
+
+}
+.button:hover{
+    opacity: .8;
+}
+.black{
+    background-color: #000;
+    color: #fff;
+}
+.darken{
+    background-color: #2e2c2c;
+      color: #fff;
+}
+.lighten{
+    background-color: rgb(65, 65, 65);
+}
+
+.changeGrid{
+    background-color: green;
+
+   
+    
+}
+.reset{
+    background-color: red;
+}
+.controlContainer{
+display: flex;
+justify-content: center;
+align-content: space-around;
+padding: 10px;
+margin: 10px;
+gap: 20px;
+
+background-color: #ccc;
+border-radius: 5px;
+box-shadow: 0 .7px .7px black;
+}
+
+.colorContainer{
+display: flex;
+justify-content: center;
+align-content: center;
+gap: 5px;
 }
